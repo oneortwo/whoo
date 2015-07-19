@@ -1,7 +1,7 @@
 var RaspiCam = require("raspicam");
 
 var camera = new RaspiCam({ 
-  mode: "timelapse",
+  mode: "photo",
   output: "image%d.jpg"
 });
 
@@ -16,6 +16,7 @@ camera.on("read", function(err, timestamp, filename){
     console.err(err);
   }
   console.log(timestamp + " Got image: " + filename);
+  camera.start();
 });
 
 //listen for the "stop" event triggered when the stop method was called
