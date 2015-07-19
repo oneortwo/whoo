@@ -1,12 +1,9 @@
 var RaspiCam = require("raspicam");
 
-var camera = new RaspiCam({ });
-
-//to take a snapshot, start a timelapse or video recording
-camera.start( );
-
-//to stop a timelapse or video recording
-//camera.stop( );
+var camera = new RaspiCam({ 
+  mode: "photo",
+  output: "photo.jpg"
+});
 
 //listen for the "start" event triggered when the start method has been successfully initiated
 camera.on("start", function(){
@@ -30,3 +27,9 @@ camera.on("stop", function(){
 camera.on("exit", function(){
     console.log("Camera exit");
 });
+
+//to take a snapshot, start a timelapse or video recording
+camera.start( );
+
+//to stop a timelapse or video recording
+//camera.stop( );
