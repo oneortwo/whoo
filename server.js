@@ -2,7 +2,8 @@ var RaspiCam = require("raspicam");
 
 var camera = new RaspiCam({ 
   mode: "photo",
-  output: "image%d.jpg"
+  output: "image%d.jpg",
+  timeout: 100000
 });
 
 //listen for the "start" event triggered when the start method has been successfully initiated
